@@ -6,6 +6,11 @@ module.exports = {
   ],
   theme: {
     extend: {
+      colors: {
+        blue: {
+          450: '#3b82f6', 
+        },
+      },
       keyframes: {
         fadeInOut1: {
           '0%': { opacity: '0' },

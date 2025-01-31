@@ -20,9 +20,13 @@ const Footer: React.FC = () => {
      };
    }, []);
  return (
-    <footer className="w-full flex flex-col items-center text-gray-500 text-xs mt-6 px-4"
-    style={{ marginBottom: isMobile ? '30%' : '0' }} 
-    >
+  <footer 
+  className="w-full flex flex-col items-center text-gray-500 text-xs -mt-4 px-4"
+  style={{ 
+    marginBottom: isMobile ? '30%' : '0',
+    marginTop: isMobile ? '20%' : '0', // Adjust this value as needed
+  }}
+>
       <div className="flex flex-wrap justify-center gap-2 md:gap-2 lg:gap-4 text-xxs">
         <a href="#">Meta</a>
         <a href="#">About</a>

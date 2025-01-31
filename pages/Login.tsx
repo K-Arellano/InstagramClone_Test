@@ -13,7 +13,7 @@ const Login: React.FC = () => (
       <meta name="description" content="Instagram Clone" />
       <link rel="icon" href="/instagram.png" />
     </Head>
-      <div className="mt-[-110px]">
+      <div className="mt-[-60px]">
     <AuthLayout>
       <MobileMockup />
       <div className="flex flex-col items-center">
