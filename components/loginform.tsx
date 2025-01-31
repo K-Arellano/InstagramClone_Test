@@ -1,7 +1,7 @@
-/* eslint-disable @next/next/no-img-element */
-/* eslint-disable react/button-has-type */
 /* eslint-disable react/jsx-boolean-value */
-import React, { useState } from 'react';
+/* eslint-disable react/button-has-type */
+/* eslint-disable @next/next/no-img-element */
+import React, { useState, useEffect} from 'react';
 import InstagramSVG from './svgComps/InstagramSVG';
 
 const LoginForm: React.FC = () => {
@@ -10,6 +10,20 @@ const LoginForm: React.FC = () => {
   const [passwordVisible, setPasswordVisible] = useState(false); // State to toggle password visibility
   const [isPasswordTouched, setIsPasswordTouched] = useState(false); // State to track if user started typing password
   const [authError, setAuthError] = useState(''); // State for authentication error message
+  const [isMobile, setIsMobile] = useState(false); // State for mobile check
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 375); // Check if screen width is 375px or less
+    };
+    
+    handleResize(); // Set initial state based on current window size
+    window.addEventListener('resize', handleResize);
+    
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
   const validateForm = () => {
     const newErrors = { email: '', password: '' };
@@ -42,8 +56,11 @@ const LoginForm: React.FC = () => {
   };
 
   return (
-<div className="min-w-[370px] max-w-[370px] flex flex-col items-center border md:border-gray-300 border-transparent bg-white p-8">      
-  {/* Adjusted Instagram logo size */}
+    <div
+      className="form-container min-w-[370px] max-w-[370px] flex flex-col items-center border md:border-gray-300 border-transparent bg-white p-8"
+      style={{ marginTop: isMobile ? '120px' : '0' }} // Inline style based on mobile size
+    >
+      {/* Adjusted Instagram logo size */}
       <div className="w-44 mb-6">
         <InstagramSVG disableDarkMode={true} white={false} />
       </div>
