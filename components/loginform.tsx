@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/label-has-associated-control */
 import React, { useState, useEffect } from 'react';
 import InstagramSVG from './svgComps/InstagramSVG';
 
@@ -82,7 +83,7 @@ const LoginForm: React.FC = () => {
       style={{ marginTop: isMobile ? '30%' : '0' }}
     >
       <div className='w-44 mb-7 mt-7'>
-        <InstagramSVG disableDarkMode={true} white={false} />
+        <InstagramSVG disableDarkMode white={false} />
       </div>
 
       <form className='w-full space-y-4' onSubmit={handleSubmit}>
@@ -100,7 +101,7 @@ const LoginForm: React.FC = () => {
           />
           <label
             htmlFor='email'
-            className={`absolute left-2 text-gray-500 text-[10px] transition-all duration-200 ease-in-out peer-placeholder-shown:top-2 peer-placeholder-shown:text-xs peer-placeholder-shown:text-gray-400 peer-focus:top-1 peer-focus:text-[9px] peer-focus:text-blue-500`}
+            className='absolute left-2 text-gray-500 text-[10px] transition-all duration-200 ease-in-out peer-placeholder-shown:top-2 peer-placeholder-shown:text-xs peer-placeholder-shown:text-gray-400 peer-focus:top-1 peer-focus:text-[9px] peer-focus:text-blue-500'
           >
             Phone number, username, or email
           </label>
@@ -121,7 +122,7 @@ const LoginForm: React.FC = () => {
           />
           <label
             htmlFor='password'
-            className={`absolute left-2 text-gray-500 text-[10px] transition-all duration-200 ease-in-out peer-placeholder-shown:top-2 peer-placeholder-shown:text-xs peer-placeholder-shown:text-gray-400 peer-focus:top-1 peer-focus:text-[9px] peer-focus:text-blue-500`}
+            className="absolute left-2 text-gray-500 text-[10px] transition-all duration-200 ease-in-out peer-placeholder-shown:top-2 peer-placeholder-shown:text-xs peer-placeholder-shown:text-gray-400 peer-focus:top-1 peer-focus:text-[9px] peer-focus:text-blue-500"
           >
             Password
           </label>
