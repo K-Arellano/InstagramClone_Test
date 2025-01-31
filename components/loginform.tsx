@@ -11,7 +11,10 @@ const LoginForm: React.FC = () => {
     email: false,
     password: false,
   });
+  const [users, setUsers] = useState<any[]>([]); // Define the type for users
+  const [loginSuccess, setLoginSuccess] = useState(false); // State for login success
 
+  // Handle mobile responsiveness
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 375);
@@ -21,6 +24,24 @@ const LoginForm: React.FC = () => {
     return () => {
       window.removeEventListener('resize', handleResize);
     };
+  }, []);
+
+  // Fetch the users from the API route (server-side)
+  useEffect(() => {
+    const fetchUsers = async () => {
+      try {
+        const response = await fetch('/api/users');
+        if (!response.ok) {
+          throw new Error('Failed to fetch users');
+        }
+        const data = await response.json();
+        setUsers(data);
+      } catch (error) {
+        console.error('Error fetching users:', error);
+      }
+    };
+
+    fetchUsers();
   }, []);
 
   const validateForm = () => {
@@ -34,11 +55,19 @@ const LoginForm: React.FC = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (validateForm()) {
-      if (formData.password === 'correctpassword') {
+      const user = users.find(
+        (user) => user.email === formData.email && user.password === formData.password
+      );
+
+      if (user) {
         console.log('Logging in:', formData);
         setAuthError('');
+        setLoginSuccess(true); // Set login success to true
+        setTimeout(() => {
+          setLoginSuccess(false); // Hide the success message after 3 seconds
+        }, 3000);
       } else {
-        setAuthError('Sorry, your password was incorrect. Please double-check your password.');
+        setAuthError('Sorry, your email or password is incorrect. Please try again.');
       }
     }
   };
@@ -53,8 +82,8 @@ const LoginForm: React.FC = () => {
       style={{ marginTop: isMobile ? '30%' : '0' }}
     >
       <div className="w-44 mb-7 mt-7">
-  <InstagramSVG disableDarkMode={true} white={false} />
-</div>
+        <InstagramSVG disableDarkMode={true} white={false} />
+      </div>
 
       <form className="w-full space-y-4" onSubmit={handleSubmit}>
         {/* Email Input */}
@@ -125,14 +154,19 @@ const LoginForm: React.FC = () => {
         <div className="w-4 h-4 rounded-full flex items-center justify-center overflow-hidden">
           <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook logo" />
         </div>
-          Log in with Facebook
+        Log in with Facebook
       </button>
-
-
 
       {authError && <p className="text-[10px] text-red-500 mt-2 text-center">{authError}</p>}
 
       <p className="text-xs mt-2 text-blue-900 cursor-pointer">Forgot password?</p>
+
+      {/* Success Message */}
+      {loginSuccess && (
+        <div className="w-full p-2 text-center text-green-500 bg-green-100 rounded-md mt-4">
+          Login successful!
+        </div>
+      )}
     </div>
   );
 };
