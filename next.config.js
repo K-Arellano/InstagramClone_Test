@@ -3,13 +3,9 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   images: {
-    domains: ['firebasestorage.googleapis.com'],
+    domains: [],
   },
-  experimental: {
-    images: {
-      allowFutureImage: true,
-    },
-  },
+
 };
 
 module.exports = nextConfig;
