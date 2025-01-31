@@ -7,7 +7,7 @@ const MobileMockup: React.FC = () => {
 
   const fadeStyle = {
     opacity: visible ? 1 : 0,
-    transition: 'opacity 1s ease-in-out', // Inline fade transition
+    transition: 'opacity 1s ease-in-out', // Inline fade transition for crossfade effect
   };
 
   return (

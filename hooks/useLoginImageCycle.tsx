@@ -1,10 +1,10 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect } from 'react';
 
 const images = [
-  "/loginImg1.png",
-  "/loginImg2.png",
-  "/loginImg3.png",
-  "/loginImg4.png",
+  '/loginImg1.png',
+  '/loginImg2.png',
+  '/loginImg3.png',
+  '/loginImg4.png',
 ];
 
 const useLoginImageCycle = (): { image: string; visible: boolean } => {
@@ -13,15 +13,15 @@ const useLoginImageCycle = (): { image: string; visible: boolean } => {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setVisible(false);
+      setVisible(false); // Start fade-out
       setTimeout(() => {
-        setIndex((prevIndex) => (prevIndex + 1) % images.length);
-        setVisible(true);
-      }, 1000); // Duration of the fade-out
-    }, 3000); // Time between image changes
+        setIndex((prevIndex) => (prevIndex + 1) % images.length); // Change image
+        setVisible(true); // Start fade-in
+      }, 2000); // Duration of the fade-out
+    }, 5000); // Time between image changes
 
     return () => clearInterval(interval);
-  }, []);
+  }, [index]);
 
   return { image: images[index], visible };
 };
