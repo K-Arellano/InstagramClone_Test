@@ -113,7 +113,7 @@ const LoginForm: React.FC = () => {
       <button className="mt-3 w-full flex items-center justify-center gap-2 py-2 text-blue-500 font-semibold rounded-lg">
         {/* Add the circular background with custom image */}
         <div className="w-5 h-5 rounded-full flex items-center justify-center overflow-hidden">
-          <img src="/facebookLogo.png" alt="Facebook logo" className="w-full h-full object-cover" />
+        <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook logo" />
         </div>
         Log in with Facebook
       </button>
