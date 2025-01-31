@@ -1,8 +1,28 @@
 /* eslint-disable react/button-has-type */
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 
-const Footer: React.FC = () => (
-    <footer className="w-full flex flex-col items-center text-gray-500 text-xs mt-6 px-4">
+const Footer: React.FC = () => {
+
+
+    const [isMobile, setIsMobile] = useState(false); // State for mobile check
+  
+  
+  useEffect(() => {
+     const handleResize = () => {
+       setIsMobile(window.innerWidth <= 375); // Check if screen width is 375px or less
+     };
+     
+     handleResize(); // Set initial state based on current window size
+     window.addEventListener('resize', handleResize);
+     
+     return () => {
+       window.removeEventListener('resize', handleResize);
+     };
+   }, []);
+ return (
+    <footer className="w-full flex flex-col items-center text-gray-500 text-xs mt-6 px-4"
+    style={{ marginBottom: isMobile ? '30%' : '0' }} 
+    >
       <div className="flex flex-wrap justify-center gap-2 md:gap-2 lg:gap-4 text-xxs">
         <a href="#">Meta</a>
         <a href="#">About</a>
@@ -27,5 +47,5 @@ const Footer: React.FC = () => (
       </div>
     </footer>
   );
-
+}
 export default Footer;

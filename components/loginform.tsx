@@ -58,7 +58,7 @@ const LoginForm: React.FC = () => {
   return (
     <div
       className="form-container min-w-[370px] max-w-[370px] flex flex-col items-center border md:border-gray-300 border-transparent bg-white p-8"
-      style={{ marginTop: isMobile ? '120px' : '0' }} // Inline style based on mobile size
+      style={{ marginTop: isMobile ? '30%' : '0' }} // Inline style based on mobile size
     >
       {/* Adjusted Instagram logo size */}
       <div className="w-44 mb-6">
