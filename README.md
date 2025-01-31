@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-This project replicates a responsive and functional version of the Instagram homepage using **Next.js (React TypeScript)** and **Tailwind CSS**. The goal was to closely match the design, layout, and features of the Instagram login page while ensuring responsiveness and accessibility across desktop and mobile devices.
+This project replicates a responsive and somewhat functional version of the Instagram homepage using **Next.js (React TypeScript)** and **Tailwind CSS**. The goal was to closely match the design, layout, and features of the Instagram login page while ensuring responsiveness and accessibility across desktop and mobile devices.
 
 ## Folder Structure
 
