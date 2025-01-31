@@ -1,12 +1,11 @@
-import React from "react";
-import Image from "next/image";
+import React from 'react';
+import Image from 'next/image';
 
-const AuthFooter: React.FC = () => {
-  return (
+const AuthFooter: React.FC = () => (
     <div className="text-center mt-4">
         <div className="mt-2 flex max-w-[350px] justify-center border border-stone-300 bg-white py-5 text-[14px] pl-11 pr-11">
       <p className="text-sm ml-6">
-        Don't have an account? <span className="text-blue-500 cursor-pointer mr-10">Sign up</span>
+        Dont have an account? <span className="text-blue-500 cursor-pointer mr-10">Sign up</span>
       </p>
         </div>
       <p className="text-sm mt-4 md-10">Get the app.</p>
@@ -16,6 +15,5 @@ const AuthFooter: React.FC = () => {
       </div>
     </div>
   );
-};
 
 export default AuthFooter;

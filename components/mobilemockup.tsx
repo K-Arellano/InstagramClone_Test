@@ -1,13 +1,13 @@
-import React from "react";
-import Image from "next/image";
-import useLoginImageCycle from "../hooks/useLoginImageCycle";
+import React from 'react';
+import Image from 'next/image';
+import useLoginImageCycle from '../hooks/useLoginImageCycle';
 
 const MobileMockup: React.FC = () => {
   const { image, visible } = useLoginImageCycle();
 
   const fadeStyle = {
     opacity: visible ? 1 : 0,
-    transition: "opacity 1s ease-in-out", // Inline fade transition
+    transition: 'opacity 1s ease-in-out', // Inline fade transition
   };
 
   return (

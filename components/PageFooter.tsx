@@ -1,7 +1,7 @@
-import React from "react";
+/* eslint-disable react/button-has-type */
+import React from 'react';
 
-const Footer: React.FC = () => {
-  return (
+const Footer: React.FC = () => (
     <footer className="w-full flex flex-col items-center text-gray-500 text-xs mt-6 px-4">
       <div className="flex flex-wrap justify-center gap-2 md:gap-2 lg:gap-4 text-xxs">
         <a href="#">Meta</a>
@@ -27,6 +27,5 @@ const Footer: React.FC = () => {
       </div>
     </footer>
   );
-};
 
 export default Footer;

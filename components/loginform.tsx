@@ -1,18 +1,20 @@
-import React, { useState } from "react";
-import InstagramSVG from "./svgComps/InstagramSVG";
-import { FaFacebookSquare } from "react-icons/fa"; // Import Facebook icon
+/* eslint-disable @next/next/no-img-element */
+/* eslint-disable react/button-has-type */
+/* eslint-disable react/jsx-boolean-value */
+import React, { useState } from 'react';
+import InstagramSVG from './svgComps/InstagramSVG';
 
 const LoginForm: React.FC = () => {
-  const [formData, setFormData] = useState({ email: "", password: "" });
-  const [errors, setErrors] = useState({ email: "", password: "" });
+  const [formData, setFormData] = useState({ email: '', password: '' });
+  const [errors, setErrors] = useState({ email: '', password: '' });
   const [passwordVisible, setPasswordVisible] = useState(false); // State to toggle password visibility
   const [isPasswordTouched, setIsPasswordTouched] = useState(false); // State to track if user started typing password
-  const [authError, setAuthError] = useState(""); // State for authentication error message
+  const [authError, setAuthError] = useState(''); // State for authentication error message
 
   const validateForm = () => {
-    const newErrors = { email: "", password: "" };
-    if (!formData.email) newErrors.email = "Email is required";
-    if (!formData.password) newErrors.password = "Password is required";
+    const newErrors = { email: '', password: '' };
+    if (!formData.email) newErrors.email = 'Email is required';
+    if (!formData.password) newErrors.password = 'Password is required';
     setErrors(newErrors);
     return !newErrors.email && !newErrors.password;
   };
@@ -21,11 +23,11 @@ const LoginForm: React.FC = () => {
     e.preventDefault();
     if (validateForm()) {
       // Simulate password check (replace with actual authentication logic)
-      if (formData.password === "correctpassword") {
-        console.log("Logging in:", formData);
-        setAuthError(""); // Clear any previous error
+      if (formData.password === 'correctpassword') {
+        console.log('Logging in:', formData);
+        setAuthError(''); // Clear any previous error
       } else {
-        setAuthError("Sorry, your password was incorrect. Please double-check your password.");
+        setAuthError('Sorry, your password was incorrect. Please double-check your password.');
       }
     }
   };
@@ -58,7 +60,7 @@ const LoginForm: React.FC = () => {
 
         <div className="relative">
           <input
-            type={passwordVisible ? "text" : "password"} // Toggle password visibility
+            type={passwordVisible ? 'text' : 'password'} // Toggle password visibility
             placeholder="Password"
             className="w-full border border-gray-300 bg-[#fafafa] px-3 py-2 rounded-sm focus:outline-none"
             value={formData.password}
@@ -70,7 +72,7 @@ const LoginForm: React.FC = () => {
               onClick={togglePasswordVisibility} // Toggle the visibility
               className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-700 font-semibold"
             >
-              {passwordVisible ? "Hide" : "Show"}
+              {passwordVisible ? 'Hide' : 'Show'}
             </button>
           )}
         </div>

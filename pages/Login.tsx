@@ -1,10 +1,10 @@
-import React from "react";
-import Head from "next/head";
-import AuthLayout from "../components/authlayout";
-import MobileMockup from "../components/mobilemockup";
-import LoginForm from "../components/loginform";
-import AuthFooter from "../components/AuthFooter";
-import Footer from "../components/PageFooter"; // Import Footer
+import React from 'react';
+import Head from 'next/head';
+import AuthLayout from '../components/authlayout';
+import MobileMockup from '../components/mobilemockup';
+import LoginForm from '../components/loginform';
+import AuthFooter from '../components/AuthFooter';
+import Footer from '../components/PageFooter'; // Import Footer
 
 const Login: React.FC = () => (
   <>

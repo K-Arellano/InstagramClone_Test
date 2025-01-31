@@ -1,4 +1,5 @@
-import React, { ReactNode } from "react";
+/* eslint-disable arrow-body-style */
+import React, { ReactNode } from 'react';
 
 interface Props {
   children: ReactNode;
